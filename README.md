@@ -2,7 +2,12 @@
 
 A p5.js addon that provides interactive, draggable points that can be used to control geometric shapes and objects. Perfect for interactive geometry visualizations, constraint-based drawing, and interactive design tools.
 
+### Example 1
+
 ![Example 1](images/example-1.gif)
+
+### Example 2
+
 ![Example 2](images/example-2.gif)
 
 ## Features
@@ -13,7 +18,7 @@ A p5.js addon that provides interactive, draggable points that can be used to co
 - **Per-sketch Drag State** - Proper state management for multiple sketches on the same page
 - **Lightweight** - Minimal footprint, works seamlessly with p5.js
 
-## Quick Start
+## How to use
 
 ### Create a Draggable Point
 
@@ -23,14 +28,14 @@ const sketch = (p) => {
 
   p.setup = function () {
     p.createCanvas(400, 400);
-    point = new p5.MovablePoint(200, 200, 15);
+    point = new p5.MovablePoint(200, 200, 15); // <------ create a new movablepoint
   };
 
   p.draw = function () {
     p.background(220);
 
     // Handle drag interactions
-    p.checkClicked([point]);
+    p.checkClicked([point]); // <------ have interaction amoung multiple points (no need for single point)
 
     // Draw the point
     const [x, y] = point.getPosition();
@@ -41,14 +46,14 @@ const sketch = (p) => {
 new p5(sketch);
 ```
 
-## API Reference
+## Reference
 
 ### MovablePoint
 
 Creates an interactive point that can be dragged with the mouse.
 
 ```javascript
-const point = new p5.MovablePoint(startX, StartY, clickableRadius);
+const point = new p5.MovablePoint(startX, startY, clickableRadius);
 ```
 
 **Parameters:**
